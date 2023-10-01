@@ -1,0 +1,171 @@
+.index{
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+
+.angry-grid {
+    display: grid; 
+ 
+    grid-template-rows: 8vh 25vh auto 10vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    gap: 0px;
+    height: 100%;
+    
+}
+
+
+
+#item-0 {
+    background-color: #fafafa; 
+    grid-row-start: 1;
+    grid-column-start: 1;
+
+    grid-row-end: 2;
+    grid-column-end: 4;
+}
+#item-1 {
+    background-color: #fafafa; 
+    grid-row-start: 4;
+    grid-column-start: 1;
+
+    grid-row-end: 5;
+    grid-column-end: 4;
+}
+#item-2 {
+    background-color: #484b6a ; 
+    grid-row-start: 2;
+    grid-column-start: 1;
+
+    grid-row-end: 3;
+    grid-column-end: 4;
+
+}
+#item-3 {
+    grid-row-start: 3;
+    grid-column-start: 1;
+
+    grid-row-end: 4;
+    grid-column-end: 2;
+
+}
+#item-4 {
+    grid-row-start: 3;
+    grid-column-start: 2;
+
+    grid-row-end: 4;
+
+}
+#item-5 {
+    grid-row-start: 3;
+    grid-column-start: 3;
+
+    grid-row-end: 4;
+    grid-column-end: 4;
+
+}
+
+
+
+.header {
+    /* center text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fafafa;
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+
+}
+
+.mov {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fafafa;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    background-color: #fafafa;
+}
+
+.front-image {
+    position: relative;
+    max-width: 20rem;
+    height: auto;
+    border-radius: 7px;
+    aspect-ratio: 2/3;
+}
+
+.mov {
+    position: relative;
+}
+.mov img {
+    transition: all 0.3s ease-in-out;
+}
+
+.mov a {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+.mov img:hover {
+    transform: scale(1.03);
+    /* Add a blur effect to the image */
+    filter: blur(3px);
+    /* Add a pointer cursor to indicate that the image is clickable */
+    cursor: pointer;
+    filter: brightness(35%);
+}
+.mov img:hover + .image-text {
+    display: block;
+    animation: ease-in 0.3s fadeIn;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  } 
+  
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    padding: 0;
+    margin: 0;
+    font-size: larger;
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+    pointer-events: none;
+}
+
+
+@media screen and (max-width: 1100px) {
+    .angry-grid {
+      display: flex;
+      flex-direction: column;
+    }
+    .mov {
+      padding: 20px
+    }
+    /* make the footer the last item in the grid column instead of the second */
+    .footer {
+      order: 2;
+    }
+    .front-image {
+        max-width: 30rem;
+    }
+  }
